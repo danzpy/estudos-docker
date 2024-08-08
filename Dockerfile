@@ -13,6 +13,8 @@ POETRY_CACHE_DIR=/tmp/poetry_cache
 ENV FLASK_APP=run.py
 RUN poetry install
 COPY . /app
+
 ENV PATH="/app/.venv/bin:$PATH"
+
 EXPOSE 5000
 CMD ["python3", "-m", "flask", "run", "--host=0.0.0.0"]
