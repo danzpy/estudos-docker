@@ -200,6 +200,16 @@ files = [
 ]
 
 [[package]]
+name = "dotenv-python"
+version = "0.0.1"
+description = "Read .env(-ish) configuration file for python web applications."
+optional = false
+python-versions = "*"
+files = [
+    {file = "dotenv-python-0.0.1.zip", hash = "sha256:362e170ca8fd69a70c1aca1fda2ddad0ac270e161e81e59f4039ec11decc14fa"},
+]
+
+[[package]]
 name = "gitdb"
 version = "4.0.11"
 description = "Git Object Database"
@@ -1133,4 +1143,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "51d8c20596675b5bc0d5192104942a8a21e16572e39ad854ec58d9fb05018382"
+content-hash = "e3e2f0db66f59d2f6730b6a728e251ab354773dcf68b4911041a0e25ae7ddd14"

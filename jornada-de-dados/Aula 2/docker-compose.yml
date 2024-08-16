@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  teste-postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresVolume:/var/lib/postgresql/data 
+    networks:
+      - postgres-compose-network
+      
+  teste-pgadmin-compose:
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "daniel.leonssio@hotmail.com"
+      PGADMIN_DEFAULT_PASSWORD: "${POSTGRES_PASSWORD}"
+    ports:
+      - "80:80"
+    depends_on:
+      - teste-postgres-compose
+    networks:
+      - postgres-compose-network
+
+volumes:
+  postgresVolume:
+
+networks: 
+  postgres-compose-network:
+    driver: bridge
